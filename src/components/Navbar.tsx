@@ -29,7 +29,7 @@ export default function NavBar() {
       <Toolbar onClick={() => navigate('/')} style={{cursor:'pointer'}}>
         <img src={HBARLogo} alt='An upper case H with a line through the top' className='hbarLogoImg' />
         <Typography variant="h6" color="white" pl={1} noWrap>
-          EchoX
+          EcoX
         </Typography>
         <Button
           variant='contained'
