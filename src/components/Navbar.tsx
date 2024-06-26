@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import HBARLogo from "../assets/hbar-logo.svg";
 import { useWalletInterface } from '../services/wallets/useWalletInterface';
 import { WalletSelectionDialog } from './WalletSelectionDialog';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const { accountId, walletInterface } = useWalletInterface();
+  const navigate = useNavigate();
 
   const handleConnect = async () => {
     if (accountId) {
@@ -24,10 +26,10 @@ export default function NavBar() {
 
   return (
     <AppBar position='relative'>
-      <Toolbar>
+      <Toolbar onClick={() => navigate('/')} style={{cursor:'pointer'}}>
         <img src={HBARLogo} alt='An upper case H with a line through the top' className='hbarLogoImg' />
         <Typography variant="h6" color="white" pl={1} noWrap>
-          Happy Building
+          EchoX
         </Typography>
         <Button
           variant='contained'
